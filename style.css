@@ -1,20 +1,20 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); /* Poppins */
 
-*{
+* {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
 }
 
-:root{
+:root {
   /* Colors */
   --background: #393e41;
   --card-background: #e94f37;
   --text: black;
 }
 
-body{
+body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,8 +23,7 @@ body{
   gap: 20px;
 }
 
-
-.gameboard{
+.gameboard {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -32,7 +31,7 @@ body{
   margin-top: 250px;
 }
 
-.card{
+.card {
   width: 100px;
   height: 100px;
   display: flex;
@@ -44,21 +43,21 @@ body{
   border-radius: 20px;
 }
 
-.card:hover{
-  opacity: 80%;
+.card:hover {
+  opacity: 50%;
   cursor: pointer;
 }
 
-footer > p{
+footer > p {
   color: white;
 }
 
-a{
+a {
   color: white;
   text-decoration: none;
 }
 
-a:hover{
+a:hover {
   text-decoration: underline;
   cursor: pointer;
 }
