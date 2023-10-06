@@ -2,9 +2,9 @@ let currentPlayer = 'x';
 
 const Gameboard = function () {
   this.data = [
-    ['x', 'o', 'x'],
     ['x', 'o', 'o'],
-    ['x', 'x', 'o'],
+    ['o', 'x', 'x'],
+    ['o', 'x', 'x'],
   ];
   this.gameboardDiv = document.querySelector('.gameboard');
   this.drawBoard = () => {
@@ -30,10 +30,33 @@ const Gameboard = function () {
   this.checkWin = () => {
     // Check Rows;
     for (let i = 0; i < 3; i++) {
-      for (let j = 0; j < 3; j++) {}
+      middle = this.data[i][1]
+      left = this.data[i][0]
+      right = this.data[i][2]
+      if(middle == left && middle == right) return true;
     }
+
+    // Check Cols
+    for(let j=0; j<3; j++){
+      middle = this.data[1][j];
+      upper = this.data[0][j];
+      bottom = this.data[2][j];
+      if(middle == upper && middle == bottom) return true;
+    }
+
+    // Check Main Diagonal
+    if(this.data[0][0] == this.data[1][1] && this.data[0][0] == this.data[2][2])
+      return true;    
+
+
+    // Check Sub Diagonal
+    if(this.data[0][2] == this.data[1][1] && this.data[1][1] == this.data[2][0])
+      return true;
+
+
+    return false;
   };
-  this.highlightWin;
+  // this.highlightWin;
 };
 
 const Player = function (sign) {
